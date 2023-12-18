@@ -1,19 +1,25 @@
 #include <stdio.h>
+#include <iostream>
+using namespace std;
 
 int main()
 {
-    // Outer loop 
-    for (int i = 1; i <= 2; i++)        // Outer loop executes twice
+    int num = 1; //start table of numbers at one
+
+    for (int row = 0; row < 10; row++) //creates 10 rows
     {
-        printf("Outer loop number %d\n", i);
-
-        // Inner loop
-        for (int j = 1; j <= 5; j++)    // Inner loop executes 5 times for each outer loop run so 10 time in total
+        for (int col = 0; col < 8; col++) //creates 8 columns
         {
-            printf("\tInner loop number %d\n", j);  // note the use of the tab (\t) option at the start to improve the layout
-            
-            //Task - Write another level of nesting here
-
+            cout << num << "\t"; //print each number
+            if (num == 92) {
+                num = 43;
+            }
+            num = num + 10;
         }
+
+        cout << num;
+        num++;
+
+        cout << endl; //output new line at the end of each row
     }
 }
